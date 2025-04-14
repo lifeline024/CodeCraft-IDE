@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeCraft IDE</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/theme/dracula.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/clike/clike.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/htmlmixed/htmlmixed.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/css/css.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.2/mode/xml/xml.min.js"></script>
+
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fas fa-code"></i>
+            <h1>CodeCraft IDE</h1>
+        </div>
+        <div class="status" id="status">Ready</div>
+    </header>
+
+    <div class="main-container">
+        <div class="editor-panel">
+            <div class="panel-header">
+                <h3>CODE EDITOR</h3>
+                <div class="controls">
+                    <select id="lang">
+                        <option value="Java">Java</option>
+                        <option value="Python">Python</option>
+                        <option value="C++">C++</option>
+                        <option value="C">C</option>
+                        <option value="JavaScript">JavaScript</option>
+                        <option value="HTML" selected>HTML</option>
+                    </select>
+                    <button id="run"><i class="fas fa-play"></i> Run (Ctrl+Enter)</button>
+                </div>
+            </div>
+            <textarea id="source"><!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #4a6bff;
+        }
+        button {
+            background-color: #4a6bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to CodeCraft IDE</h1>
+    <p>Edit this HTML/CSS/JS code and click Run to see the results!</p>
+    <button id="demo-btn">Click Me</button>
+    
+    <script>
+        document.getElementById('demo-btn').addEventListener('click', function() {
+            alert('Button clicked! HTML execution is working perfectly!');
+        });
+    </script>
+</body>
+</html></textarea>
+        </div>
+
+        <div class="output-panel">
+            <div class="panel-header">
+                <h3>OUTPUT</h3>
+                <div class="tab-buttons">
+                    <button class="tab-button active" id="output-tab">Output</button>
+                    <button class="tab-button" id="console-tab">Console</button>
+                </div>
+            </div>
+            <iframe id="output-frame" sandbox="allow-scripts allow-modals"></iframe>
+            <textarea readonly id="text-output"></textarea>
+        </div>
+    </div>
+
+    <footer>
+        Made with <i class="fas fa-heart" style="color: #ff4757;"></i> by _lifeline024
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
