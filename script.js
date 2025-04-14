@@ -213,3 +213,8 @@ document.addEventListener('keydown', function(e) {
 
 // Initialize with HTML mode
 editor.setOption("mode", "htmlmixed");
+
+// Disable right click 
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+  });
